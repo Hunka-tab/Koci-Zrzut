@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1516295916252905194}
   - component: {fileID: 5728154830159385411}
   - component: {fileID: 5505096102352725684}
-  - component: {fileID: -1302548390825391280}
   m_Layer: 0
   m_Name: BROOM
   m_TagString: Untagged
@@ -163,31 +162,30 @@ PolygonCollider2D:
       - {x: 0.62, y: 4.06}
       - {x: 1.1, y: 5.3199997}
       - {x: 1.1, y: 5.92}
-      - {x: 0.7560071, y: 5.7839556}
-      - {x: 0.52075595, y: 5.947361}
       - {x: 0.35999998, y: 5.92}
       - {x: 0.16, y: 5.8199997}
       - {x: 0.06, y: 5.92}
       - {x: -0.08, y: 5.92}
       - {x: -0.19999999, y: 5.8199997}
       - {x: -0.35999998, y: 5.92}
-      - {x: -0.45152336, y: 5.9612145}
       - {x: -0.58, y: 5.92}
       - {x: -0.78, y: 5.8199997}
       - {x: -0.97999996, y: 5.92}
-      - {x: -1.1545796, y: 5.943391}
+      - {x: -1.1, y: 5.92}
       - {x: -1.1, y: 5.3199997}
       - {x: -1.06, y: 5.22}
       - {x: -0.35999998, y: 3.46}
       - {x: -0.32, y: 3.1799998}
-      - {x: -0.3019677, y: 3.1763806}
-      - {x: -0.2966586, y: 3.1692607}
-      - {x: -0.2667862, y: 3.179695}
-      - {x: -0.27383158, y: 3.184819}
-      - {x: -0.0011802316, y: 3.2772222}
-      - {x: 0.12650377, y: 3.2424743}
-      - {x: 0.21744774, y: 3.2067606}
-      - {x: 0.275535, y: 3.1722443}
+      - {x: -0.35999998, y: 2.8}
+      - {x: -0.35999998, y: 2.7}
+      - {x: -0.16, y: 2.6}
+      - {x: -0.122805394, y: 2.6194868}
+      - {x: -0.077025145, y: 2.636342}
+      - {x: 0.03813216, y: 2.623844}
+      - {x: 0.12764531, y: 2.6342187}
+      - {x: 0.16, y: 2.62}
+      - {x: 0.24, y: 2.6399999}
+      - {x: 0.38, y: 2.7}
   m_UseDelaunayMesh: 0
 --- !u!114 &5505096102352725684
 MonoBehaviour:
@@ -196,25 +194,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8203014666139730184}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0dd403c8a0248e418e3346f46e38327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  lifeTime: 5
---- !u!114 &-1302548390825391280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8203014666139730184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0eb60844429e6428d71cdbda911131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  attackPhaseDuration: 2
   moveSpeed: 2
-  attackCooldown: 1
-  attackForce: 0.5
+  attackRotationSpeed: 200
+  fallSpeed: 4
+  fallRotationSpeed: 180
