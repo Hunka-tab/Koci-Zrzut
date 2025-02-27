@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,13 +16,13 @@ public class PlayerController : MonoBehaviour
     [Header("UI i Game Over")]
     public LifeUI lifeUI;
     public ScoreUI scoreUI;
-    public GameObject gameOverScreen;  // Obiekt wyœwietlaj¹cy ekran przegranej
 
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isGrounded = false;
     private bool isInvincible = false;
+    private int score = 0;  // Zmienna do przechowywania wyniku
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
         // Aktualizacja UI na starcie
         if (lifeUI != null) lifeUI.UpdateLives(currentLives, maxLives);
-        if (scoreUI != null) scoreUI.UpdateScore(0);
+        if (scoreUI != null) scoreUI.UpdateScore(score);  // Inicjalizacja wyniku
     }
 
     void Update()
@@ -104,8 +105,8 @@ public class PlayerController : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
-        if (gameOverScreen != null) gameOverScreen.SetActive(true);
-        Time.timeScale = 0f; // Pauza gry
+        PlayerPrefs.SetInt("FinalScore", score); // Zapisz wynik
+        SceneManager.LoadScene("GameOverScene");
     }
 
     // Metoda zwiêkszaj¹ca ¿ycie (np. po zebraniu rybki)
@@ -118,6 +119,7 @@ public class PlayerController : MonoBehaviour
     // Metoda dodaj¹ca punkty
     public void AddScore(int value)
     {
-        if (scoreUI != null) scoreUI.UpdateScore(value);
+        score += value;  // Zwiêkszamy wynik
+        if (scoreUI != null) scoreUI.UpdateScore(score);  // Aktualizujemy UI
     }
 }
